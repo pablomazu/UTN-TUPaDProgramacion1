@@ -116,7 +116,6 @@ else:
 #● Mayor o igual que 6 y menor que 7: "Muy Fuerte" (puede causar daños significativos).
 #● Mayor o igual que 7: "Extremo" (puede causar graves daños a gran escala).
 
-magnitud_terremoto = float(input("Ingrese la magnitud de un terremoto"))
 
 magnitud_terremoto = float(input("Ingrese la magnitud de un terremoto: "))
 
@@ -141,58 +140,119 @@ else:
 
 Estacion = ""
 
-
 hemisferio = str(input("Ingrese en que hemisferio se encuentra (N/S): "))
-mes = str(input("Ingrese el mes del año: "))
-dia = str(input("Ingrese el dia del año: "))
+mes = input("Ingrese el mes del año: ").lower()
+dia = int(input("Ingrese el dia del año: "))
 
-hemisferio == hemisferio.upper()
-mes == mes.lower()
 
-if hemisferio == "N":
-    if mes == "diciembre":
-        if 21 <= dia <=30: 
+hemisferio = hemisferio.upper() == "N"
+
+if mes == "diciembre":
+    if 21 <= dia <=31:
+        if hemisferio:     
             estacion = "Invierno"
-        elif 1<= dia < 21:
-            estacion = "Otoño"    
-    elif mes == "enero":
-        if 1 <= dia <= 31:
-            estacion = "Invierno"
-    elif mes == "febrero":
-        if 1<= dia <= 28:
-            estacion = "Invierno" 
-    elif mes == "marzo":
-        if 1<= dia <= 20:
-            estacion = "Invierno"                  
-        elif 20 < dia > 30:
-            estacion = "Primavera"
-    elif mes == "abril":
-        if 1 <= dia <= 31:
-            estacion = "Primavera"
-    elif mes == "mayo":
-        if 1 <= dia <= 31:
-            estacion = "Primavera"
-
-    elif mes == "junio":
-        if 1 <= dia <= 20:
-            estacion = "Primavera"
-        elif 20 < dia <= 30:
+        else:
             estacion = "Verano" 
-    elif mes == "julio":
-        if 1 <= dia <= 31:
-            estacion = "Verano"
-    elif mes == "agosto":
-        if 1 <= dia <= 31:
-            estacion = "Verano"
-    elif mes == "septiembre":
-        if 1 <= dia <= 20:
-            estacion = "Verano"
-        elif 20< dia < 30:
-            estacion = "Otono"   
-    elif mes == "Octubre":
-        if 1 <= dia <= 31:
+
+    elif 1<= dia < 21:
+        if hemisferio:    
             estacion = "Otoño"
-    elif mes == "noviembre":
-        if 1 <= dia <= 31:
+        else:
+            estacion = "Primavera"
+
+elif mes == "enero":
+    if 1 <= dia <= 31:
+        if hemisferio:    
+            estacion = "Invierno"
+        else:
+            estacion = "Verano"    
+
+elif mes == "febrero":
+    if 1<= dia <= 28:
+        if hemisferio:    
+            estacion = "Invierno" 
+        else:
+            estacion = "Verano"
+
+elif mes == "marzo":
+    if 1<= dia <= 20:
+        if hemisferio:    
+            estacion = "Invierno"       
+        else:
+            estacion = "Verano"
+
+    elif 20 < dia < 31:
+        if hemisferio:    
+            estacion = "Primavera"
+        else:
             estacion = "Otoño"
-                                    
+
+elif mes == "abril":
+    if 1 <= dia <= 31:
+        if hemisferio:    
+            estacion = "Primavera"
+        else:
+            estacion ="Otoño"
+
+
+elif mes == "mayo":
+    if 1 <= dia <= 31:
+        if hemisferio:    
+            estacion = "Primavera"
+        else:
+            estacion = "Otoño"
+
+elif mes == "junio":
+    if 1 <= dia <= 20:
+        if hemisferio:
+            estacion = "Primavera"
+        else:
+            estacion = "Otoño"
+
+    elif 20 < dia <= 30:
+        if hemisferio:
+            estacion = "Verano"
+        else:
+            estacion = "Invierno"
+
+elif mes == "julio":
+    if 1 <= dia <= 31:
+        if hemisferio:    
+            estacion = "Verano"
+        else:
+            estacion = "Invierno"
+
+elif mes == "agosto":
+    if 1 <= dia <= 31:
+        if hemisferio:
+            estacion = "Verano"
+        else:
+            estacion = "Invierno"
+
+elif mes == "septiembre":
+    if 1 <= dia <= 20:
+        if hemisferio:
+            estacion = "Verano"
+        else:
+            estacion = "Invierno"
+    elif 20< dia < 30:
+        if hemisferio:
+            estacion = "Otoño"
+        else:
+            estacion = "Primavera"
+
+elif mes == "octubre":
+    if 1 <= dia <= 31:
+        if hemisferio:
+            estacion = "Otoño"
+        else:
+            estacion = "Primavera"
+
+elif mes == "noviembre":
+    if 1 <= dia <= 31:
+        if hemisferio:
+            estacion = "Otoño"
+        else:
+            estacion = "Primavera"
+print(f"{estacion}")
+
