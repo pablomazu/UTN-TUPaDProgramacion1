@@ -131,6 +131,4 @@ for i in range(1,len(num)+1):
 
 print(f"El numero invertido es {num_invertido}.")
 """
-for i in range(0,10,2):
-    if i % 3 == 0:
-        print(i)
+
